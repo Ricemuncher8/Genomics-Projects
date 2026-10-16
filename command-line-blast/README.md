@@ -101,7 +101,7 @@ Top blastx hit (example):
 
 ## Files Included
 - README.md (this file)
-- fasta
+- fragment.fasta
 - e.coli.l7.faa
   
 ## How to Reproduce
