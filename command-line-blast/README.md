@@ -102,6 +102,7 @@ Top blastx hit (example):
 ## Files Included
 - README.md (this file)
 - fasta
+- e.coli.l7.faa
   
 ## How to Reproduce
 A note on system:
