@@ -1,4 +1,4 @@
-# Task 1b: Command-line BLAST & NCBI Data Retrieval
+# Command-line BLAST & NCBI Data Retrieval
 
 ## Overview
 This task demonstrates the retrieval of genomic and proteomic data from the NCBI FTP server, the formatting of BLAST databases, and the execution of command-line BLAST searches (`blastp`, `tblastn`, `blastn`, `blastx`) to identify proteins, genomic regions, and unknown DNA fragments.
