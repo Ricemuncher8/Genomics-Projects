@@ -2,7 +2,7 @@
 
 ## Overview
 This task demonstrates the retrieval of genomic and proteomic data from the NCBI FTP server, the formatting of BLAST databases, and the execution of command-line BLAST searches (`blastp`, `tblastn`, `[...]`
-
+This task will go through the actual work done first then many notes that follow including reproducibility and how to adjust depending on if you are using Mac, Windows or Linux.
 ## 1. Retrieving Data from NCBI
 Genomic data for *Prochlorococcus marinus* was retrieved from the NCBI GenBank FTP server.
 
@@ -101,10 +101,56 @@ Top blastx hit (example):
 
 ## Files Included
 - README.md (this file)
-
-(Optional) You may include `fragment.fasta` for reproducibility; it is small and safe to store in the repository.
-
+- fasta
+  
 ## How to Reproduce
+A note on system:
+
+If on Windows:
+1. Install Windows Subsystem for Linux (WSL)
+
+Open PowerShell as an Administrator.
+
+Run: wsl --install
+
+Restart the computer. Upon reboot, an Ubuntu terminal will open. Follow the prompts to create a UNIX username and password.
+
+2. Install Miniconda (Linux Version)
+Inside the new Ubuntu terminal, download and execute the Linux installer:
+
+wget [https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh](https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh)
+
+bash Miniconda3-latest-Linux-x86_64.sh
+
+Press Enter to scroll, type yes to accept the license, and critically, type yes at the very end to initialize Conda.
+
+Close the Ubuntu terminal and open a new one (you should see (base) on the left).
+
+3. Create the Environment & Install Tools
+
+Run: conda create -n genomics -y -c conda-forge -c bioconda prokka bwa samtools bcftools salmon kraken2 bracken velvet abyss fastqc fastx_toolkit
+
+Run: conda activate genomics
+
+Hardware Optimization Tip: When running tools like bwa, samtools, or salmon in this environment, add the -t 8 or -p 8 flag. This efficiently utilizes 8 of the 12 available threads on the Ryzen 5 2600 processor, maximizing speed while leaving enough overhead for Windows to run smoothly in the background.
+
+If on Mac:
+
+1. Open Terminal
+
+Open your standard Mac Terminal. (Assuming Miniconda is already installed, you should see (base) on the left).
+
+2. Create the Environment & Install Tools
+
+Run the exact same command used on the PC:
+conda create -n genomics -y -c conda-forge -c bioconda prokka bwa samtools bcftools salmon kraken2 bracken velvet abyss fastqc fastx_toolkit
+
+3. Activate & Run
+
+Run: conda activate genomics
+
+Test the installation by typing bwa. If the help menu prints, the Mac is fully equipped and ready for the workflows.
+
 1. Install NCBI BLAST+ (makeblastdb, blastp, tblastn, blastn, blastx, blastdbcmd).
 2. Download the three files shown in section 1 and decompress them.
 3. Create BLAST databases as shown in section 2.
