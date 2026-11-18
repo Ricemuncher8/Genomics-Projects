@@ -1,0 +1,11 @@
+*.fastq
+*.fastq.gz
+*.afg
+*.dot
+*LastGraph*
+*PreGraph*
+*Graph2*
+*Roadmaps*
+*Sequences*
+*.zip
+.DS_Store

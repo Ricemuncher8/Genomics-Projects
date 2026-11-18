@@ -1,0 +1,18 @@
+name: genomics
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - abyss
+  - fastqc
+  - bwa
+  - samtools
+  - velvet
+  - bcftools
+  - salmon
+  - fastx_toolkit
+  - prokka
+  - kraken2
+  - bracken
+prefix: /Users/ricemuncher/miniconda3/envs/genomics
